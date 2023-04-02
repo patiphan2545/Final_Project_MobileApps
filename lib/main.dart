@@ -68,11 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
   Icon(
   Icons.account_circle_outlined,
-  size: 50, // กำหนดขนาดไอคอนเป็น 30 pixels
+  size: 50, // กำหนดขนาดไอคอน
 ),
   SizedBox(width: 14),
   Text(
-    "ยินดีต้อนรับ $displayEmail",
+    "Welcome $displayEmail",
     style: TextStyle(
       color: Colors.white, // เปลี่ยนสีตัวหนังสือเป็นสีขาว
       fontSize: 13, // กำหนดขนาดตัวอักษร
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.pinkAccent),
-              title: const Text("ลงชื่อออก"),
+              title: const Text("Log out"),
               onTap: () {
                 _service.logout(currentUser);
                 Navigator.of(context).pushAndRemoveUntil(

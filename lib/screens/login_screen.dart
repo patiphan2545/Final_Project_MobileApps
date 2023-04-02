@@ -14,14 +14,14 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ลงชื่อเข้าใช้งาน"),
+        title: const Text("User Login"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Column(
           children: [
             CircleAvatar(
-              radius: 90,
+              radius: 70,
               backgroundImage: NetworkImage(
                   "https://th.bing.com/th/id/OIP.yOX1_KBsR6fClg3ek8G_ZwHaHx?pid=ImgDet&w=820&h=861&rs=1"),
             ),
@@ -29,20 +29,22 @@ class LoginScreen extends StatelessWidget {
               height: 20,
             ),
             TextField(
-              controller: _emailController,
-              decoration: const InputDecoration(hintText: "อีเมล"),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: const InputDecoration(hintText: "รหัสผ่าน"),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+controller: _emailController,
+decoration: const InputDecoration(
+hintText: "E-mail",
+prefixIcon: Icon(Icons.email_outlined),
+),
+),
+const SizedBox(height: 10),
+TextField(
+controller: _passwordController,
+obscureText: true,
+decoration: const InputDecoration(
+hintText: "Password",
+prefixIcon: Icon(Icons.lock_outline),
+),
+),
+const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () async {
                   bool res = await _service.login(
@@ -55,10 +57,10 @@ class LoginScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                MyHomePage(title: 'หน้าหลัก')));
+                                MyHomePage(title: 'Home page')));
                   }
                 },
-                child: const Text("เข้าสู่ระบบ")),
+                child: const Text("Login")),
             const SizedBox(
               height: 20,
             ),
@@ -77,14 +79,14 @@ MaterialPageRoute(builder: (context) => CreateAccountScreen()),
   },
   child: RichText(
     text: TextSpan(
-      text: "ไม่มีบัญชี? ",
+      text: "no account? ",
       style: TextStyle(
         color: Colors.black,
         fontSize: 16.0,
       ),
       children: <TextSpan>[
         TextSpan(
-          text: "สร้างบัญชี",
+          text: "create your account",
           style: TextStyle(
             color: Colors.blue,
             decoration: TextDecoration.underline,

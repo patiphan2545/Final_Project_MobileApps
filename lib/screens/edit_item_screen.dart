@@ -25,7 +25,7 @@ class _EditItemScreenState extends State<EditItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("แก้ไขหัวข้อ"),
+        title: const Text("Edit"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -33,11 +33,11 @@ class _EditItemScreenState extends State<EditItemScreen> {
           children: [
             TextField(
               controller: widget._itemName,
-              decoration: const InputDecoration(label: Text("เรื่อง")),
+              decoration: const InputDecoration(label: Text("Topic")),
             ),
             TextField(
               controller: widget._itemDesc,
-              decoration: const InputDecoration(label: Text("คำอธิบาย")),
+              decoration: const InputDecoration(label: Text("Description")),
             ),
             const SizedBox(
               height: 20,
@@ -55,7 +55,7 @@ class _EditItemScreenState extends State<EditItemScreen> {
     children: [
       const Icon(Icons.delete_forever),
       const SizedBox(width: 8),
-      const Text("ลบ"),
+      const Text("Delete"),
     ],
   ),
 )
@@ -73,7 +73,7 @@ class _EditItemScreenState extends State<EditItemScreen> {
     children: [
       const Icon(Icons.edit),
       const SizedBox(width: 8),
-      const Text("แก้ไข"),
+      const Text("Edit"),
     ],
   ),
 )
@@ -101,12 +101,12 @@ class _EditItemScreenState extends State<EditItemScreen> {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('เกิดข้อผิดพลาด'),
+            title: const Text('Something wrong.'),
             content: Text(error.toString()),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: const Text('ตกลง'),
+                child: const Text('Confirm'),
               ),
             ],
           ),
@@ -116,12 +116,12 @@ class _EditItemScreenState extends State<EditItemScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('เกิดข้อผิดพลาด'),
-          content: const Text('กรุณากรอกข้อมูลให้ครบถ้วน'),
+          title: const Text('Something wrong.'),
+          content: const Text('Please complete th information.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('ตกลง'),
+              child: const Text('Confirm'),
             ),
           ],
         ),
@@ -135,11 +135,11 @@ class _EditItemScreenState extends State<EditItemScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('ลบเรียบร้อยแล้ว'),
+          title: const Text('Successfully deleted'),
           actions: [
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('ตกลง'),
+              child: const Text('Confirm'),
             ),
           ],
         ),
@@ -148,12 +148,12 @@ class _EditItemScreenState extends State<EditItemScreen> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text('เกิดข้อผิดพลาด'),
+          title: const Text('Somthing wrong'),
           content: Text(error.toString()),
           actions: [
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('ตกลง'),
+              child: const Text('Confirm'),
             ),
           ],
         ),

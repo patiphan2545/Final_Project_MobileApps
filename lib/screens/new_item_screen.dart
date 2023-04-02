@@ -19,7 +19,7 @@ class _NewItemScreenState extends State<NewItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("เพิ่มหัวข้อ"),
+        title: const Text("Add Topic"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -27,11 +27,11 @@ class _NewItemScreenState extends State<NewItemScreen> {
           children: [
             TextField(
               controller: _itemName,
-              decoration: InputDecoration(label: Text("เรื่อง")),
+              decoration: InputDecoration(label: Text("Topic")),
             ),
             TextField(
               controller: _itemDesc,
-              decoration: InputDecoration(label: Text("คำอธิบาย")),
+              decoration: InputDecoration(label: Text("Description")),
             ),
             const SizedBox(
               height: 20,
@@ -49,7 +49,7 @@ class _NewItemScreenState extends State<NewItemScreen> {
     children: [
       const Icon(Icons.save),
       const SizedBox(width: 8),
-      const Text("บันทึก"),
+      const Text("Save"),
     ],
   ),
 )
