@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ),
   SizedBox(width: 14),
   Text(
-    "Welcome $displayEmail",
+    "ยินดีต้อนรับ $displayEmail",
     style: TextStyle(
       color: Colors.white, // เปลี่ยนสีตัวหนังสือเป็นสีขาว
       fontSize: 13, // กำหนดขนาดตัวอักษร
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.pinkAccent),
-              title: const Text("Log out"),
+              title: const Text("ออกจากระบบ"),
               onTap: () {
                 _service.logout(currentUser);
                 Navigator.of(context).pushAndRemoveUntil(
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
             itemCount: dataDocuments.length,
             itemBuilder: (context, index) {
               return ListTile(
-                leading: Icon(Icons.star_border_purple500, color: Colors.pinkAccent),
+                leading: Icon(Icons.contacts_outlined, color: Colors.blueGrey),
                 title: Text(dataDocuments[index]["name"].toString()),
                 subtitle: Text(dataDocuments[index]["desc"].toString()),
                 onTap: () => _editItemScreen(dataDocuments[index].id,
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _createNewItem,
-        tooltip: 'New Item',
+        tooltip: 'เพิ่มข้อมูล',
         child: const Icon(Icons.add),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.

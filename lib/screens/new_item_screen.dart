@@ -19,7 +19,7 @@ class _NewItemScreenState extends State<NewItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add Topic"),
+        title: const Text("เพิ่มข้อมูลลูกค้า"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -27,11 +27,11 @@ class _NewItemScreenState extends State<NewItemScreen> {
           children: [
             TextField(
               controller: _itemName,
-              decoration: InputDecoration(label: Text("Topic")),
+              decoration: InputDecoration(label: Text("ชื่อ-นามสกุล")),
             ),
             TextField(
               controller: _itemDesc,
-              decoration: InputDecoration(label: Text("Description")),
+              decoration: InputDecoration(label: Text("ช่องทางการติดต่อ")),
             ),
             const SizedBox(
               height: 20,
@@ -49,7 +49,7 @@ class _NewItemScreenState extends State<NewItemScreen> {
     children: [
       const Icon(Icons.save),
       const SizedBox(width: 8),
-      const Text("Save"),
+      const Text("บันทึกข้อมูล"),
     ],
   ),
 )
@@ -74,8 +74,8 @@ class _NewItemScreenState extends State<NewItemScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("เพิ่มข้อมูลเรียบร้อยแล้ว"),
-        content: const Text("ข้อมูลของท่านได้ถูกเพิ่มแล้ว"),
+        title: const Text("เพิ่มข้อมูลสำเร็จ"),
+        content: const Text("ข้อมูลถูกเพิ่มเรียบร้อยแล้ว"),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(),

@@ -14,7 +14,7 @@ class CreateAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Create user account"),
+        title: const Text("สมัครสมาชิก"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
@@ -41,7 +41,6 @@ TextField(
 SizedBox(
   height: 20,
 ),
-
             ElevatedButton(
                 onPressed: () async {
                   bool res = await _service.register(
@@ -53,7 +52,7 @@ SizedBox(
                         MaterialPageRoute(builder: (context) => LoginScreen()));
                   }
                 },
-                child: const Text("Create"))
+                child: const Text("สมัครสมาชิก"))
           ],
         ),
       ),

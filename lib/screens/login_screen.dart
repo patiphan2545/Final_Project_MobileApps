@@ -14,16 +14,16 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("User Login"),
+        title: const Text("เข้าสู่ระบบ"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Column(
           children: [
             CircleAvatar(
-              radius: 70,
+              radius: 90,
               backgroundImage: NetworkImage(
-                  "https://th.bing.com/th/id/OIP.yOX1_KBsR6fClg3ek8G_ZwHaHx?pid=ImgDet&w=820&h=861&rs=1"),
+                  "https://th.bing.com/th/id/OIP.3F0E92T9gZXZ7PUhjx5dwAHaHa?pid=ImgDet&rs=1"),
             ),
             const SizedBox(
               height: 20,
@@ -57,10 +57,10 @@ const SizedBox(height: 20),
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                MyHomePage(title: 'Home page')));
+                                MyHomePage(title: 'ข้อมูลติดต่อลูกค้า')));
                   }
                 },
-                child: const Text("Login")),
+                child: const Text("เข้าสู่ระบบ")),
             const SizedBox(
               height: 20,
             ),
@@ -79,14 +79,14 @@ MaterialPageRoute(builder: (context) => CreateAccountScreen()),
   },
   child: RichText(
     text: TextSpan(
-      text: "no account? ",
+      text: "ไม่มีบัญชี? ",
       style: TextStyle(
         color: Colors.black,
         fontSize: 16.0,
       ),
       children: <TextSpan>[
         TextSpan(
-          text: "create your account",
+          text: "สมัครบัญชี",
           style: TextStyle(
             color: Colors.blue,
             decoration: TextDecoration.underline,
